@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "430411933462",
+    "project_id": "moveotask-c5bd6",
+    "storage_bucket": "moveotask-c5bd6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430411933462:android:729753851d14b25da71237",
+        "android_client_info": {
+          "package_name": "com.example.moveotask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430411933462-50p914nbcn6jlcf33rdk0s1j9le6raqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDCVfsDt6F6AmDbTtbJxJy1ZWydkev93o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430411933462-50p914nbcn6jlcf33rdk0s1j9le6raqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

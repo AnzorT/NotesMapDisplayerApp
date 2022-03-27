@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="193dp"
+        android:background="@drawable/moveo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_text_input_layout"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@android:color/transparent">
+
+        <EditText
+            android:id="@+id/email_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sign in with email"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_text_input_layout"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@android:color/transparent"
+        >
+
+
+        <EditText
+            android:id="@+id/password_editText"
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter your password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <CheckBox
+        android:id="@+id/remember_me_checkBox"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:text="@string/remember_me"
+        android:padding="10dp"
+        android:onClick="createAutomaticLogin"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="@string/login_button"
+                android:onClick="LoginToTheApp"
+                android:background="@drawable/round_button"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <TextView
+                android:id="@+id/register_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_text"
+                />
+
+            <Button
+                android:id="@+id/registration_btn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/registration_button"
+                android:onClick="redirectToRegistrationPage"
+                android:textColor="#BABABA"
+                android:background="?android:attr/selectableItemBackground"
+                />
+    </LinearLayout>
+
+</LinearLayout>
