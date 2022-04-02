@@ -43,6 +43,7 @@
             android:id="@+id/password_editText"
             android:layout_width="390dp"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Enter your password" />
 
     </com.google.android.material.textfield.TextInputLayout>

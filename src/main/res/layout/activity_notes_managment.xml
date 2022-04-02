@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotesManagmentActivity"
+    tools:context=".NotesManagementActivity"
     android:orientation="vertical"
     android:gravity="center">
     <TextView
@@ -51,7 +51,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="40dp"/>
+        android:layout_height="70dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
         android:orientation="horizontal"
         android:gravity="center">
         <Button
-            android:id="@+id/edit"
+            android:id="@+id/edit_or_add_note"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/add_note_button"
@@ -69,11 +69,11 @@
             android:layout_width="70dp"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/delete"
+            android:id="@+id/delete_or_discard_note"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/delete_note_button"
-            android:onClick="deleteNote"
+            android:onClick="deleteOrDiscardNote"
             android:background="@drawable/round_button"/>
 
     </LinearLayout>

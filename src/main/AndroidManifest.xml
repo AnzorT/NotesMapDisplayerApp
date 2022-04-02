@@ -5,8 +5,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-feature android:name="android.hardware.location.gps" />
-    <uses-permission android:name="android.permission.ACCESS_GPS"/>
 
     <application
         android:allowBackup="true"
@@ -31,7 +29,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD4nGGcCS_JWfvaOz0RiUyVKoF0f_ZJduo"/>
         <activity
-            android:name=".NotesManagmentActivity"
+            android:name=".NotesManagementActivity"
             android:exported="false" />
         <activity
             android:name=".BottomNavigationActivity"

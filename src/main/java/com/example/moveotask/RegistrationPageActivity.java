@@ -2,20 +2,29 @@ package com.example.moveotask;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 /**
- * This class defines registration page
+ * <p>
+ *     Author: Anzor Torikashvili.
+ *     <br>
+ *     This class defines RegistrationPageActivity activity.
+ * </p>
  */
 public class RegistrationPageActivity extends AppCompatActivity {
 
+    //all the objects available for the user.
     EditText firstNameEditText;
     EditText lastNameEditText;
     EditText emailEditText;
@@ -27,21 +36,28 @@ public class RegistrationPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
 
-        database = FirebaseDatabase.getInstance("https://moveotask-c5bd6-default-rtdb.firebaseio.com/");
-        firebaseAuthentication = FirebaseAuth.getInstance();
-
+        //match the variables to the objects on screen
         firstNameEditText = findViewById(R.id.first_name_editText);
         lastNameEditText = findViewById(R.id.last_name_editText);
         emailEditText = findViewById(R.id.email_editText);
         passwordEditText = findViewById(R.id.password_editText);
+
+        database = FirebaseDatabase.getInstance("https://moveotask-c5bd6-default-rtdb.firebaseio.com/");
+        firebaseAuthentication = FirebaseAuth.getInstance();
+
     }
 
     /**
-     * Retrive the data the user entered
-     * @param view android studio class object
+     * <p>
+     *      onClick method of register_btn.
+     *      <br>
+     *      takes the data the user entered and sends it to authentication method.
+     * </p>
+     * @param view android studio class object.
      */
     public void registerUser(View view) {
 
@@ -53,13 +69,13 @@ public class RegistrationPageActivity extends AppCompatActivity {
     }
 
     /**
-     * check the data the user entered are proper
-     * @param firstNameField forst name of the user
-     * @param lasttNameField last name of the user
-     * @param emailField email of the user
-     * @param passwordField password of the user
+     * Checks that the data the user entered is valid.
+     * @param firstNameField first name of the user.
+     * @param lastNameField last name of the user.
+     * @param emailField email of the user.
+     * @param passwordField password of the user.
      */
-    public void authenticate(String firstNameField, String lasttNameField,
+    public void authenticate(String firstNameField, String lastNameField,
                              String emailField, String passwordField) {
         int flag = 0;
         if (firstNameField.isEmpty()) {
@@ -68,7 +84,7 @@ public class RegistrationPageActivity extends AppCompatActivity {
             flag = 1;
         }
 
-        if (lasttNameField.isEmpty()) {
+        if (lastNameField.isEmpty()) {
             lastNameEditText.setError("Last name is required");
             lastNameEditText.requestFocus();
             flag = 1;
@@ -103,7 +119,7 @@ public class RegistrationPageActivity extends AppCompatActivity {
             firebaseAuthentication.createUserWithEmailAndPassword(emailField, passwordField)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
-                            user = new User(firstNameField, lasttNameField, emailField,
+                            user = new User(firstNameField, lastNameField, emailField,
                                     passwordField);
                             addUserToDatabase(user);
                         } else {
@@ -117,13 +133,13 @@ public class RegistrationPageActivity extends AppCompatActivity {
 
 
     /**
-     * Add the user to our database
-     * @param user authenticated registration data of the user
+     * Add the user to our database if authentication is successful.
+     * @param user authenticated registration data of the user.
      */
     public void addUserToDatabase(User user) {
 
         database.getReference("Users")
-                .child(firebaseAuthentication.getCurrentUser()
+                .child(Objects.requireNonNull(firebaseAuthentication.getCurrentUser())
                         .getUid()).setValue(user)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
