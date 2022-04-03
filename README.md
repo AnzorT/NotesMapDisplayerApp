@@ -11,8 +11,7 @@ The user has two options to view the notes he created, he can view them in a lis
 
 The program is written in android studio environment in java.
 The services I used for presenting the map are Google maps and google location. The reason being it has very detailed API and instructions on how to use their services. 
-For the database I am using Firebase since it is built for developing mobile and web apps, it displays the data in a user-friendly way, it has many useful features, the API is detailed and in my opinion it was a good choice to use it.
-For the date data structure, I used TimeStamp because it saves the date itself and the time the note was created, which gives a more accurate list when sorting notes that were created in the same date.  
+For the database I am using Firebase since it is built for developing mobile and web apps, it displays the data in a user-friendly way, it has many useful features, the API is detailed and in my opinion it was a good choice to use it.  
 
 
 For Map mode and List mode I have created them as fragments.
